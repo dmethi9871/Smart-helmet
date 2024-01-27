@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="css/Login.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="images/2422940.webp" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            
+        </div>
+        <form class="p-3 mt-3" onsubmit="return login()">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="userName" id="userName" placeholder="Username">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password">
+            </div>
+            <button type="submit" class="btn mt-3">Login</button>
+        </form>
+        
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("userName").value;
+            var password = document.getElementById("pwd").value;
+
+            // Check if the username and password are correct
+            if (username === "ADMIN1" && password === "abc@123") {
+                // Redirect to the desired page
+                window.location.href = "hello.html";
+                return false; // Prevent form submission (optional)
+            } else {
+                alert("Invalid username or password");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>

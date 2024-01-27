@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Sewer/Septic Tank Death Cases</title>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e8e8e8; /* Set a background color for better visualization */
+        margin: 0;
+      }
+  
+      .death_cases_section {
+        background-color: #f0f0f0;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+  
+      .spherical-section {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        background-color: #f0f0f0;
+        clip-path: polygon(50% 10%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        z-index: -1;
+      }
+  
+      #stateWiseInfo, #totalDeathInfo {
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #333; /* Set text color */
+      }
+  
+      h2 {
+        text-align: center;
+        font-size: 24px; /* Set font size */
+        color: #555;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        background-color: #f0f0f0;
+        clip-path: polygon(50% 10%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        z-index: -1; /* Set heading color */
+      }
+  
+      /* Additional styling for a better layout */
+      .container {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+</head>
+<body>
+
+<section class="death_cases_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading_container">
+          <h2>Total Number of Sewer/Septic Tank Death Cases from 1993</h2>
+        </div>
+        <div id="stateWiseInfo">
+          Loading state-wise data...
+        </div>
+        <div id="totalDeathInfo">
+          Loading total death data...
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simulating dynamic data update
+  let stateWiseData = [
+    { state: 'Andhra Pradesh', deaths: 28 },
+    { state: 'Bihar', deaths: 4 },
+    { state: 'Chandigarh', deaths: 6 },
+    { state: 'Chhattisgarh', deaths: 1 },
+    { state: 'Dadra & Nagar Haveli (UT)', deaths: 3 },
+    { state: 'Delhi', deaths: 112 },
+    { state: 'Goa', deaths: 6 },
+    { state: 'Gujarat', deaths: 204 },
+    { state: 'Haryana', deaths: 113 },
+    { state: 'Jharkhand', deaths: 4 },
+    { state: 'Karnataka', deaths: 91 },
+    { state: 'Kerala', deaths: 13 },
+    { state: 'Madhya Pradesh', deaths: 22 },
+    { state: 'Maharashtra', deaths: 78 },
+    { state: 'Odisha', deaths: 2 },
+    { state: 'Puducherry', deaths: 9 },
+    { state: 'Punjab', deaths: 47 },
+    { state: 'Rajasthan', deaths: 53 },
+    { state: 'Tamil Nadu', deaths: 250 },
+    { state: 'Telangana', deaths: 21 },
+    { state: 'Tripura', deaths: 2 },
+    { state: 'Uttar Pradesh', deaths: 136 },
+    { state: 'Uttarakhand', deaths: 9 },
+    { state: 'West Bengal', deaths: 27 }
+  ];
+
+  let currentIndex = 0; // Current index to track the state being displayed
+
+  // Function to update death cases information
+  function updateDeathCasesInfo() {
+    const stateWiseInfoElement = document.getElementById('stateWiseInfo');
+    const totalDeathInfoElement = document.getElementById('totalDeathInfo');
+    const totalDeaths = stateWiseData.reduce((total, stateData) => total + stateData.deaths, 0);
+    const currentState = stateWiseData[currentIndex];
+
+    stateWiseInfoElement.innerHTML = `
+      <p>${currentState.state}: ${currentState.deaths}</p>
+    `;
+
+    totalDeathInfoElement.innerHTML = `
+      <p>Total Number of Sewer/Septic Tank Death Cases from 1993 [up to 30th November, 2023]: ${totalDeaths}</p>
+    `;
+
+    currentIndex = (currentIndex + 1) % stateWiseData.length; // Move to the next state
+  }
+
+  // Simulate automatic increase in death cases (you can replace this with real-time data fetching)
+  setInterval(() => {
+    // Increment the death cases count for the current state (simulated)
+    stateWiseData[currentIndex].deaths;
+
+    updateDeathCasesInfo(); // Update the displayed information
+  }, 5000); // Update every 5 seconds (adjust as needed)
+</script>
+
+</body>
+</html>

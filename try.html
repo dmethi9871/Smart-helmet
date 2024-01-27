@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensor's Real Time Reading</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .data-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 30px auto;
+      background-color: #fff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .data-item {
+      text-align: center;
+      margin: 20px;
+      transition: background-color 0.5s ease; /* Add transition effect for smooth color change */
+    }
+    .data-item h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px;
+      color: #333;
+    }
+    .data-item p {
+      font-size: 36px;
+      font-weight: bold;
+      color: #6eb7ff;
+    }
+    .data-head {
+      width: 80%;
+      text-align: center;
+      font-size: 45px;
+      font-weight: bold;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #6eb7ff;
+      color: #fff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+    }
+    .exceed-limit {
+      background-color: #8b0000 !important; /* Dark red color */
+      animation: blink 1s infinite; /* Blinking effect */
+    }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+    .limit-message {
+      color: #8b0000;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+
+  <!-- Remove Firebase scripts -->
+
+</head>
+
+<body>
+  <audio id="alertSound" src="MV27TES-alarm.mp3"></audio>
+  <div class="data-head">Sensor's Real Time Reading</div>
+
+  <!-- Block 1: Temperature -->
+  <div class="data-container">
+    <div class="data-item" id="temperatureItem">
+      <h2>Temperature</h2>
+      <p class="value" id="temperatureValue">Loading...</p>
+      <div class="limit-message" id="limitMessageTemperature"></div>
+      <button onclick="playAlertSound()">Play Alert</button>
+    </div>
+  </div>
+
+  <!-- Block 2: Humidity -->
+  <div class="data-container">
+    <div class="data-item" id="humidityItem">
+      <h2>Humidity</h2>
+      <p class="value" id="humidityValue">Loading...</p>
+      <div class="limit-message" id="limitMessageHumidity"></div>
+      <button onclick="playAlertSound()">Play Alert</button>
+    </div>
+  </div>
+
+  <!-- Block 3: Soil Moisture -->
+  <div class="data-container">
+    <div class="data-item" id="soilMoistureItem">
+      <h2>Soil Moisture</h2>
+      <p class="value" id="soilMoistureValue">Loading...</p>
+      <div class="limit-message" id="limitMessageSoilMoisture"></div>
+      <button onclick="playAlertSound()">Play Alert</button>
+    </div>
+  </div>
+
+  <!-- Add blocks for other sensors (Light, Pressure, Sound, Motion) -->
+
+  
+  <script>
+    let sensorData = {
+      temperature: 10,
+      humidity: 20,
+      soilMoisture: 30
+      // Add more sensor data as needed
+    };
+
+    let limits = {
+      temperature: 30,
+      humidity: 40,
+      soilMoisture: 50
+      // Add more sensor limits as needed
+    };
+
+    function updateData(sensor) {
+      const elementId = `${sensor}Value`;
+      const element = document.getElementById(elementId);
+      const limitMessage = document.getElementById(`limitMessage${sensor}`);
+      const alertSound = document.getElementById('alertSound');
+      const sensorValue = sensorData[sensor];
+
+      element.innerHTML = `${sensorValue} ${sensor === 'temperature' ? '&#8451;' : '%'}`;
+
+      // Check if data exceeds the upper limit
+      if (sensorValue > limits[sensor]) {
+        element.classList.add('exceed-limit');
+        limitMessage.innerHTML = `Limit Exceeded: ${sensor} value exceeds the limit!`;
+        alertSound.play();
+      } else {
+        // Remove the 'exceed-limit' class if the value is within the limit
+        element.classList.remove('exceed-limit');
+        limitMessage.innerHTML = ''; // Clear the limit message
+      }
+    }
+
+    function updateAllSensors() {
+      for (const sensor in sensorData) {
+        updateData(sensor);
+      }
+    }
+
+    // Initial update
+    updateAllSensors();
+
+    // Simulate updating data for testing
+    setInterval(() => {
+      for (const sensor in sensorData) {
+        sensorData[sensor] = Math.floor(Math.random() * 100);
+        updateData(sensor);
+      }
+    }, 1000);
+
+    function playAlertSound() {
+      const alertSound = document.getElementById('alertSound');
+      alertSound.play();
+    }
+  </script>
+</body>
+</html>

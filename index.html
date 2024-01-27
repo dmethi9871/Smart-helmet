@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/fevicon.png" type="">
+
+  <title> EzeBuddies </title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 5,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true
+          },
+          600: {
+            items: 2,
+            nav: false
+          },
+          1000: {
+            items: 3,
+            nav: true,
+            loop: false
+          }
+        }
+      });
+    });
+    
+  </script>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e8e8e8; /* Set a background color for better visualization */
+      }
+  
+      .death_cases_section {
+        background-color: #f0f0f0;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+  
+      .spherical-section {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        background-color: #f0f0f0;
+        clip-path: polygon(50% 10%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        z-index: -1;
+      }
+  
+      #stateWiseInfo, #totalDeathInfo {
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+      }
+  
+      /* Additional styling for a better layout */
+      .container {
+        position: relative;
+        z-index: 2;
+      }
+  
+      h2 {
+        text-align: center;
+      }
+    </style>
+  
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats-->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid ">
+         <!-- <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +01 123455678990
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : demo@gmail.com
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Location
+              </span>
+            </a>
+          </div>-->
+        </div> 
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                EzeBuddies
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="PREMODEL.html">Pre Model</a>
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="HomeSewage.html">Home sewage</a>
+                </li>
+                
+
+                
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="Login.html"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                </li>
+                
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="slider_bg_box">
+        <img src="images/slider-bg.jpg" alt="">
+      </div>
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 ">
+                  <div class="detail-box">
+                    <h1>
+                      Our Problem Statement <br>
+                      Smart Helmet
+                    </h1>
+                    <p id="creative-text">
+                      Despite prohibition of hazardous cleaning of sewers and septic tanks (manual cleaning of sewers and septic tanks without safety kits, safety devices and without adherence to safety precautions) it is still being resorted to in many parts of the country.
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://sih.gov.in/sih2023PS" target="_blank" class="btn1">
+                        SIH Problem Statements
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 ">
+                  <div class="detail-box">
+                    <h1>
+                      Our Presentation <br>
+                      Approach
+                    </h1>
+                    <p>
+                      This powerpoint presentation elaborates the our solution.
+                    </p>
+                    <div class="btn-box">
+                      <a href="" target="_blank" class="btn1">
+                        Download PPT
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 ">
+                  <div class="detail-box">
+                    <h1>
+                      SIGNODES
+    
+                    </h1>
+                    <p>
+                      The Signodes (IoT) Club is an intiative<br> taken to encourage the students of the <br>institute in the IoT and relative domains)
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Get A Quote
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container">
+          <h2>
+            Why <span>Smart Helmet</span>
+          </h2>
+          <p>
+            
+            A life-saving sewer helmet equipped with advanced safety features to protect laborers from hazards,<br> ensuring their well-being during challenging working conditions.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Gas Detection
+                </h5>
+                <p>
+                  Identify toxic gases (NH3, SO2, H2S, Cl2, NOx) <br> in sewage environments.
+                </p>
+                <!-- <a href="">
+                  Read More
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Constant Health Monitoring
+                </h5>
+                <p>
+                  Continuous vitals tracking (temperature, pulse) ensures laborer well-being in confined spaces.
+                </p>
+                <!-- <a href="">
+                  Read More
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Immediate Alerts
+                </h5>
+                <p>
+                  Warn workers with visual and audible alarms <br> when gas levels become unsafe.
+                </p>
+                <!-- <a href="">
+                  Read More
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s4.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Remote Oversight
+                </h5>
+                <p>
+                  Supervisors remotely monitor worker conditions for timely assistance and safety.
+                </p>
+                <!-- <a href="">
+                  Read More
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <span>Us</span>
+              </h2>
+            </div>
+            <p>
+              
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="images/about-img.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- track section -->
+
+  <section class="death_cases_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading_container">
+            <h2>Total Number of Sewer/Septic Tank Death Cases from 1993</h2>
+          </div>
+          <div id="stateWiseInfo">
+            Loading state-wise data...
+          </div>
+          <div id="totalDeathInfo">
+            Loading total death data...
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end track section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What Says Our <span>Teammates</span>
+        </h2>
+      </div>
+      <div class="client_container">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                  I Deepanshu Methi, alongside Pranav Chaturvedi, took charge of the software aspect of the SmartHelmet project. My primary responsibilities encompassed the implementation of the project's website, serving as the public face to showcase our innovation.
+In this capacity, I played a pivotal role in determining the architecture of the website, making critical decisions regarding databases, selecting backend technologies, and designing the overall flow of the website. Together with Pranav, we worked to harmonize the hardware and software components, ensuring a cohesive and integrated solution.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/Deepanshu'spic.jpeg" alt="" class="img-1">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Web Developer
+                    </h6>
+                    <p>
+                      Deepanshu Methi
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                    As a collaborative effort with my teammate Deepanshu Methi, I, Pranav Chaturvedi, played a crucial role in the web and software development aspects of the SmartHelmet project. Our partnership involved in-depth discussions on technologies, data flow, and the presentation of information. We strategized and determined how data would be showcased, as well as the corresponding actions that would be taken based on the information. By working closely together, we aim to ensure the seamless integration of the software part, providing a robust and efficient system for the SmartHelmet project.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/PranavPic.png" alt="" class="img-1">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Web Developer
+                    </h6>
+                    <p>
+                      Pranav Chaturvedi
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item" id="leader">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                    As the Team Leader of EzeBuddies, my role extends in both strategic planning and technical implementation. I lead the team by facilitating collaborative brainstorming sessions and guiding the collective effort to find effective solutions. With Amiya, I have played a key role in designing the model of the project. This involved outlining the intricate details of sensor data flow, identifying optimal sensor, and devising a strategy for seamless integration. Our joint efforts aim to create a sophisticated and reliable SmartHelmet that not only prioritizes the safety of sewer workers but also showcases innovation in both hardware and system design. 
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/prashant's pic.webp" alt="" class="img-1">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Team Leader
+                    </h6>
+                    <p>
+                      Prashant Kumar Singh
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                    As a dedicated team member of EzeBuddies, I have actively contributed to the project by specializing in PCB designing and collaborating with my teammate, Prashant Kumar Singh. Our focus has been on seamlessly integrating cutting-edge sensors into the helmet, enhancing its capabilities to provide a comprehensive safety solution for laborers working in challenging environments such as sewers. Through meticulous design and collaborative efforts, our goal is to create a robust and innovative SmartHelmet that not only meets industry standards but also prioritizes the well-being of those who rely on it in their daily work.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/amiya's pic.jpg" alt="" class="img-1">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Hardware
+                    </h6>
+                    <p>
+                      Amiya Krishna Gupta
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                    As a key contributor to the SmartHelmet project, I, Aditi Gupta, specialized in Machine Learning. My primary focus involved developing and training a model designed to detect sewer-related images uploaded on our social media handles. This innovative system is configured to automatically identify such images, promptly notifying our team if intervention or assistance is required in sewer-related tasks.Through the integration of machine learning algorithms, I aimed to enhance the project's responsiveness and efficiency, leveraging technology to streamline communication and support for sewer workers.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/Aditi.jpg" alt="" class="img-1">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      ML Developer
+                    </h6>
+                    <p>
+                      Aditi Gupta
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                    As a dedicated member of the SmartHelmet project, I, Avadhesh Chandra Tewari, specialize in research work, focusing on studying relevant research papers to enhance the project's foundation. <br> My responsibilities extend to crafting comprehensive presentations and designing engaging PowerPoint slides that effectively communicate the project's ideas, innovations, and research findings. <br>This model serves as a proactive solution, enabling timely and targeted responses to potential issues identified through social media channels.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/Avadhesh's pic.jpeg" alt="" class="img-1">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Presenter
+                    </h6>
+                    <p>
+                      Avadhesh Chandra Tewari
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+  <section class="contact_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="heading_container">
+            <h2>
+              Contact Us
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="form_container contact-form">
+            <form action="">
+              <div>
+                <input type="text" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14033.099389219777!2d77.4753025011594!3d28.441130045808286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1e055d148a1%3A0x9f5207f7f0bc8f63!2sNoida%20Institute%20of%20Engineering%20and%20Technology%20(NIET%2C%20Greater%20Noida)!5e0!3m2!1sen!2sin!4v1702968003285!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +01 9871839579
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : Signodes.niet.co.in
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+             
+Illegal and unsafe manual cleaning of sewers and septic tanks, without proper safety measures, is still happening in many places, despite it being prohibited.
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="index.html">
+                <img src="images/nav-bullet.png" alt="">
+                Home
+              </a>
+              <a class="" href="about.html">
+                <img src="images/nav-bullet.png" alt="">
+                About
+              </a>
+              <a class="" href="service.html">
+                <img src="images/nav-bullet.png" alt="">
+                Services
+              </a>
+              <a class="" href="contact.html">
+                <img src="images/nav-bullet.png" alt="">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section 
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </section> -->
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <script>
+    // Simulating dynamic data update
+    let stateWiseData = [
+      { state: 'Andhra Pradesh', deaths: 28 },
+      { state: 'Bihar', deaths: 4 },
+      { state: 'Chandigarh', deaths: 6 },
+      { state: 'Chhattisgarh', deaths: 1 },
+      { state: 'Dadra & Nagar Haveli (UT)', deaths: 3 },
+      { state: 'Delhi', deaths: 112 },
+      { state: 'Goa', deaths: 6 },
+      { state: 'Gujarat', deaths: 204 },
+      { state: 'Haryana', deaths: 113 },
+      { state: 'Jharkhand', deaths: 4 },
+      { state: 'Karnataka', deaths: 91 },
+      { state: 'Kerala', deaths: 13 },
+      { state: 'Madhya Pradesh', deaths: 22 },
+      { state: 'Maharashtra', deaths: 78 },
+      { state: 'Odisha', deaths: 2 },
+      { state: 'Puducherry', deaths: 9 },
+      { state: 'Punjab', deaths: 47 },
+      { state: 'Rajasthan', deaths: 53 },
+      { state: 'Tamil Nadu', deaths: 250 },
+      { state: 'Telangana', deaths: 21 },
+      { state: 'Tripura', deaths: 2 },
+      { state: 'Uttar Pradesh', deaths: 136 },
+      { state: 'Uttarakhand', deaths: 9 },
+      { state: 'West Bengal', deaths: 27 }
+    ];
+  
+    let currentIndex = 0; // Current index to track the state being displayed
+  
+    // Function to update death cases information
+    function updateDeathCasesInfo() {
+      const stateWiseInfoElement = document.getElementById('stateWiseInfo');
+      const totalDeathInfoElement = document.getElementById('totalDeathInfo');
+      const totalDeaths = stateWiseData.reduce((total, stateData) => total + stateData.deaths, 0);
+      const currentState = stateWiseData[currentIndex];
+  
+      stateWiseInfoElement.innerHTML = `
+        <p>${currentState.state}: ${currentState.deaths}</p>
+      `;
+  
+      totalDeathInfoElement.innerHTML = `
+        <p>Total Number of Sewer/Septic Tank Death Cases from 1993 [up to 30th November, 2023]: ${totalDeaths}</p>
+      `;
+  
+      currentIndex = (currentIndex + 1) % stateWiseData.length; // Move to the next state
+    }
+  
+    // Simulate automatic increase in death cases (you can replace this with real-time data fetching)
+    setInterval(() => {
+      // Increment the death cases count for the current state (simulated)
+      stateWiseData[currentIndex].deaths;
+  
+      updateDeathCasesInfo(); // Update the displayed information
+    }, 5000); // Update every 5 seconds (adjust as needed)
+  </script>
+  <!-- End Google Map -->
+
+  <!-- Other Scripts -->
+  <script src="/js/homepage.js"></script>
+
+</body>
+
+</html>
