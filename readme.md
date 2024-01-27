@@ -1,7 +1,9 @@
+![WhatsApp Image 2024-01-12 at 10 30 15_259e00e1](https://github.com/dmethi9871/Smart-helmet/assets/76877961/44d25537-d9ae-499a-8717-c72a18b95002)
+
 Youtube link ->https://youtu.be/Uw_xESyfTeg
 ```markdown
 
-![WhatsApp Image 2023-12-19 at 07 38 39_edd2e525](https://github.com/dmethi9871/Smart-helmet/assets/76877961/8439315c-ad04-448b-81db-5670f250b419)
+
 
 # Sanitation Worker Safety System
 
