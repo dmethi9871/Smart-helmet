@@ -1,5 +1,8 @@
 Youtube link ->https://youtu.be/Uw_xESyfTeg
 ```markdown
+
+![WhatsApp Image 2023-12-19 at 07 38 39_edd2e525](https://github.com/dmethi9871/Smart-helmet/assets/76877961/8439315c-ad04-448b-81db-5670f250b419)
+
 # Sanitation Worker Safety System
 
 Sanitary workers, numbering around 1.2 million, play a vital role in maintaining sanitation but endure unchanged working conditions for over a century, facing both social injustices and serious health risks. Exposure to hazardous gases, cardiovascular issues, musculoskeletal disorders, and various infections poses significant threats to their well-being.
